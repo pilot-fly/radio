@@ -1,0 +1,1387 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: 0;
+}
+
+html {
+  font-size: 100px;
+}
+
+body {
+  width: 100%;
+  font-size: 14px;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 32000px*px/320px, 360px, 375px, 412px, 414px;
+  }
+  #zhu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #zhu img {
+    width: 4rem;
+  }
+  #back {
+    width: 100%;
+    font-size: 14px;
+    background-image: url(img/qu.jpg);
+    background-size: 10rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  /*歌曲名*/
+  #header {
+    width: 100%;
+    height: 0.6rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem;
+    position: relative;
+  }
+  #header .back {
+    position: absolute;
+    left: 0.2rem;
+    top: 0;
+  }
+  #header .back img {
+    width: 0.2rem;
+  }
+  #header #name {
+    font-size: 0.25rem;
+  }
+  #header .more {
+    position: absolute;
+    right: 0.2rem;
+    top: 0;
+  }
+  #header .more img {
+    width: 0.2rem;
+  }
+  /*作者*/
+  #author {
+    widows: 100%;
+    height: 0.3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  /*选择*/
+  #select {
+    width: 100%;
+    height: 0.3rem;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  #select span {
+    border: 1px solid #3C7A03;
+    color: #3C7A03;
+    font-size: 12px;
+    padding: 0.05rem;
+  }
+  #select #dts {
+    border-color: #777;
+    color: #777;
+    font-weight: 600;
+    font-family: "微软雅黑";
+  }
+  /*图片*/
+  #pic {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    margin: 0.2rem auto;
+    overflow: hidden;
+  }
+  /*歌词*/
+  #ci-box {
+    text-align: center;
+  }
+  #ci-box #ci {
+    color: #fff;
+  }
+  /*选项卡*/
+  #huan {
+    text-align: center;
+    margin: 0.1rem auto;
+  }
+  #huan span {
+    display: inline-block;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #A56D53;
+    border-radius: 50%;
+  }
+  #huan .ing {
+    background: #fff;
+  }
+  /*时间和进度条*/
+  #jin-box {
+    overflow: hidden;
+    padding: 0 0.15rem;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    position: relative;
+  }
+  #jin-box #current {
+    float: left;
+    color: #fff;
+  }
+  #jin-box #pi-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 2.6rem;
+    background: #F0F0F0;
+    height: 0.02rem;
+    border-radius: 0.1rem;
+  }
+  #jin-box #pi-box #pi {
+    position: absolute;
+    left: -0.04rem;
+    top: -0.03rem;
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 50%;
+    background: #3C7A03;
+  }
+  #jin-box #duration {
+    float: right;
+    color: #fff;
+  }
+  /*播放和切歌*/
+  #qie-box {
+    text-align: center;
+    margin-top: 0.1rem;
+  }
+  #qie-box img {
+    margin-right: 0.1rem;
+  }
+  /*列表*/
+  #lie-box {
+    text-align: center;
+    margin-top: 0.14rem;
+    margin-bottom: 0.14rem;
+  }
+  #lie-box img {
+    width: 0.3rem;
+    margin-right: 0.35rem;
+  }
+  #lie-box img:nth-child(5) {
+    margin-right: 0;
+  }
+  /*隐藏的列表*/
+  .yin {
+    width: 100%;
+    height: 5rem;
+    background: rgba(41, 41, 41, 0.7);
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+  }
+  .yin #yin-top {
+    width: 320px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 44;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    border-bottom: 1px solid #F0F0F0;
+    padding: 0 0.15rem;
+  }
+  .yin #yin-top .span1 {
+    color: #fff;
+    float: left;
+    font-size: 18px;
+  }
+  .yin #yin-top .span1 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .yin #yin-top .span2 {
+    float: right;
+  }
+  .yin #yin-top .span2 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .xian {
+    animation: xian 2s ease both;
+  }
+  @keyframes xian {
+    0% {
+      bottom: -5rem;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  /*歌曲*/
+  #mu-list {
+    margin-top: 0.6rem;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+  }
+  #mu-list li {
+    padding: 0.1rem 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    border-bottom: 1px solid #CBCBCB;
+  }
+  #mu-list li .name {
+    color: #fff;
+    font-size: 18px;
+    float: left;
+  }
+  #mu-list li .author {
+    color: #CBCBCB;
+    float: left;
+    margin-left: 0.1rem;
+  }
+  #mu-list li .love {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .love img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list li .dele {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .dele img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list .active .name, #mu-list .active .author {
+    color: #3C7A03;
+  }
+  /*添加*/
+  #add {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 0.1rem;
+  }
+  /*关闭*/
+  #close {
+    font-size: 16px;
+    padding: 0.2rem 0;
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid #F0F0F0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 36000px*px/320px, 360px, 375px, 412px, 414px;
+  }
+  #zhu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #zhu img {
+    width: 4rem;
+  }
+  #back {
+    width: 100%;
+    font-size: 14px;
+    background-image: url(img/qu.jpg);
+    background-size: 10rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  /*歌曲名*/
+  #header {
+    width: 100%;
+    height: 0.6rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem;
+    position: relative;
+  }
+  #header .back {
+    position: absolute;
+    left: 0.2rem;
+    top: 0;
+  }
+  #header .back img {
+    width: 0.2rem;
+  }
+  #header #name {
+    font-size: 0.25rem;
+  }
+  #header .more {
+    position: absolute;
+    right: 0.2rem;
+    top: 0;
+  }
+  #header .more img {
+    width: 0.2rem;
+  }
+  /*作者*/
+  #author {
+    widows: 100%;
+    height: 0.3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  /*选择*/
+  #select {
+    width: 100%;
+    height: 0.3rem;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  #select span {
+    border: 1px solid #3C7A03;
+    color: #3C7A03;
+    font-size: 12px;
+    padding: 0.05rem;
+  }
+  #select #dts {
+    border-color: #777;
+    color: #777;
+    font-weight: 600;
+    font-family: "微软雅黑";
+  }
+  /*图片*/
+  #pic {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    margin: 0.2rem auto;
+    overflow: hidden;
+  }
+  /*歌词*/
+  #ci-box {
+    text-align: center;
+  }
+  #ci-box #ci {
+    color: #fff;
+  }
+  /*选项卡*/
+  #huan {
+    text-align: center;
+    margin: 0.1rem auto;
+  }
+  #huan span {
+    display: inline-block;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #A56D53;
+    border-radius: 50%;
+  }
+  #huan .ing {
+    background: #fff;
+  }
+  /*时间和进度条*/
+  #jin-box {
+    overflow: hidden;
+    padding: 0 0.15rem;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    position: relative;
+  }
+  #jin-box #current {
+    float: left;
+    color: #fff;
+  }
+  #jin-box #pi-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 2.6rem;
+    background: #F0F0F0;
+    height: 0.02rem;
+    border-radius: 0.1rem;
+  }
+  #jin-box #pi-box #pi {
+    position: absolute;
+    left: -0.04rem;
+    top: -0.03rem;
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 50%;
+    background: #3C7A03;
+  }
+  #jin-box #duration {
+    float: right;
+    color: #fff;
+  }
+  /*播放和切歌*/
+  #qie-box {
+    text-align: center;
+    margin-top: 0.1rem;
+  }
+  #qie-box img {
+    margin-right: 0.1rem;
+  }
+  /*列表*/
+  #lie-box {
+    text-align: center;
+    margin-top: 0.14rem;
+    margin-bottom: 0.14rem;
+  }
+  #lie-box img {
+    width: 0.3rem;
+    margin-right: 0.35rem;
+  }
+  #lie-box img:nth-child(5) {
+    margin-right: 0;
+  }
+  /*隐藏的列表*/
+  .yin {
+    width: 100%;
+    height: 5rem;
+    background: rgba(41, 41, 41, 0.7);
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+  }
+  .yin #yin-top {
+    width: 360px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 44;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    border-bottom: 1px solid #F0F0F0;
+    padding: 0 0.15rem;
+  }
+  .yin #yin-top .span1 {
+    color: #fff;
+    float: left;
+    font-size: 18px;
+  }
+  .yin #yin-top .span1 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .yin #yin-top .span2 {
+    float: right;
+  }
+  .yin #yin-top .span2 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .xian {
+    animation: xian 2s ease both;
+  }
+  @keyframes xian {
+    0% {
+      bottom: -5rem;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  /*歌曲*/
+  #mu-list {
+    margin-top: 0.6rem;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+  }
+  #mu-list li {
+    padding: 0.1rem 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    border-bottom: 1px solid #CBCBCB;
+  }
+  #mu-list li .name {
+    color: #fff;
+    font-size: 18px;
+    float: left;
+  }
+  #mu-list li .author {
+    color: #CBCBCB;
+    float: left;
+    margin-left: 0.1rem;
+  }
+  #mu-list li .love {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .love img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list li .dele {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .dele img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list .active .name, #mu-list .active .author {
+    color: #3C7A03;
+  }
+  /*添加*/
+  #add {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 0.1rem;
+  }
+  /*关闭*/
+  #close {
+    font-size: 16px;
+    padding: 0.2rem 0;
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid #F0F0F0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 360px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 37500px*px/320px, 360px, 375px, 412px, 414px;
+  }
+  #zhu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #zhu img {
+    width: 4rem;
+  }
+  #back {
+    width: 100%;
+    font-size: 14px;
+    background-image: url(img/qu.jpg);
+    background-size: 10rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  /*歌曲名*/
+  #header {
+    width: 100%;
+    height: 0.6rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem;
+    position: relative;
+  }
+  #header .back {
+    position: absolute;
+    left: 0.2rem;
+    top: 0;
+  }
+  #header .back img {
+    width: 0.2rem;
+  }
+  #header #name {
+    font-size: 0.25rem;
+  }
+  #header .more {
+    position: absolute;
+    right: 0.2rem;
+    top: 0;
+  }
+  #header .more img {
+    width: 0.2rem;
+  }
+  /*作者*/
+  #author {
+    widows: 100%;
+    height: 0.3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  /*选择*/
+  #select {
+    width: 100%;
+    height: 0.3rem;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  #select span {
+    border: 1px solid #3C7A03;
+    color: #3C7A03;
+    font-size: 12px;
+    padding: 0.05rem;
+  }
+  #select #dts {
+    border-color: #777;
+    color: #777;
+    font-weight: 600;
+    font-family: "微软雅黑";
+  }
+  /*图片*/
+  #pic {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    margin: 0.2rem auto;
+    overflow: hidden;
+  }
+  /*歌词*/
+  #ci-box {
+    text-align: center;
+  }
+  #ci-box #ci {
+    color: #fff;
+  }
+  /*选项卡*/
+  #huan {
+    text-align: center;
+    margin: 0.1rem auto;
+  }
+  #huan span {
+    display: inline-block;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #A56D53;
+    border-radius: 50%;
+  }
+  #huan .ing {
+    background: #fff;
+  }
+  /*时间和进度条*/
+  #jin-box {
+    overflow: hidden;
+    padding: 0 0.15rem;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    position: relative;
+  }
+  #jin-box #current {
+    float: left;
+    color: #fff;
+  }
+  #jin-box #pi-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 2.6rem;
+    background: #F0F0F0;
+    height: 0.02rem;
+    border-radius: 0.1rem;
+  }
+  #jin-box #pi-box #pi {
+    position: absolute;
+    left: -0.04rem;
+    top: -0.03rem;
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 50%;
+    background: #3C7A03;
+  }
+  #jin-box #duration {
+    float: right;
+    color: #fff;
+  }
+  /*播放和切歌*/
+  #qie-box {
+    text-align: center;
+    margin-top: 0.1rem;
+  }
+  #qie-box img {
+    margin-right: 0.1rem;
+  }
+  /*列表*/
+  #lie-box {
+    text-align: center;
+    margin-top: 0.14rem;
+    margin-bottom: 0.14rem;
+  }
+  #lie-box img {
+    width: 0.3rem;
+    margin-right: 0.35rem;
+  }
+  #lie-box img:nth-child(5) {
+    margin-right: 0;
+  }
+  /*隐藏的列表*/
+  .yin {
+    width: 100%;
+    height: 5rem;
+    background: rgba(41, 41, 41, 0.7);
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+  }
+  .yin #yin-top {
+    width: 375px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 44;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    border-bottom: 1px solid #F0F0F0;
+    padding: 0 0.15rem;
+  }
+  .yin #yin-top .span1 {
+    color: #fff;
+    float: left;
+    font-size: 18px;
+  }
+  .yin #yin-top .span1 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .yin #yin-top .span2 {
+    float: right;
+  }
+  .yin #yin-top .span2 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .xian {
+    animation: xian 2s ease both;
+  }
+  @keyframes xian {
+    0% {
+      bottom: -5rem;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  /*歌曲*/
+  #mu-list {
+    margin-top: 0.6rem;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+  }
+  #mu-list li {
+    padding: 0.1rem 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    border-bottom: 1px solid #CBCBCB;
+  }
+  #mu-list li .name {
+    color: #fff;
+    font-size: 18px;
+    float: left;
+  }
+  #mu-list li .author {
+    color: #CBCBCB;
+    float: left;
+    margin-left: 0.1rem;
+  }
+  #mu-list li .love {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .love img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list li .dele {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .dele img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list .active .name, #mu-list .active .author {
+    color: #3C7A03;
+  }
+  /*添加*/
+  #add {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 0.1rem;
+  }
+  /*关闭*/
+  #close {
+    font-size: 16px;
+    padding: 0.2rem 0;
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid #F0F0F0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 375px;
+  }
+}
+
+@media screen and (min-width: 412px) {
+  html {
+    font-size: 41200px*px/320px, 360px, 375px, 412px, 414px;
+  }
+  #zhu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #zhu img {
+    width: 4rem;
+  }
+  #back {
+    width: 100%;
+    font-size: 14px;
+    background-image: url(img/qu.jpg);
+    background-size: 10rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  /*歌曲名*/
+  #header {
+    width: 100%;
+    height: 0.6rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem;
+    position: relative;
+  }
+  #header .back {
+    position: absolute;
+    left: 0.2rem;
+    top: 0;
+  }
+  #header .back img {
+    width: 0.2rem;
+  }
+  #header #name {
+    font-size: 0.25rem;
+  }
+  #header .more {
+    position: absolute;
+    right: 0.2rem;
+    top: 0;
+  }
+  #header .more img {
+    width: 0.2rem;
+  }
+  /*作者*/
+  #author {
+    widows: 100%;
+    height: 0.3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  /*选择*/
+  #select {
+    width: 100%;
+    height: 0.3rem;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  #select span {
+    border: 1px solid #3C7A03;
+    color: #3C7A03;
+    font-size: 12px;
+    padding: 0.05rem;
+  }
+  #select #dts {
+    border-color: #777;
+    color: #777;
+    font-weight: 600;
+    font-family: "微软雅黑";
+  }
+  /*图片*/
+  #pic {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    margin: 0.2rem auto;
+    overflow: hidden;
+  }
+  /*歌词*/
+  #ci-box {
+    text-align: center;
+  }
+  #ci-box #ci {
+    color: #fff;
+  }
+  /*选项卡*/
+  #huan {
+    text-align: center;
+    margin: 0.1rem auto;
+  }
+  #huan span {
+    display: inline-block;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #A56D53;
+    border-radius: 50%;
+  }
+  #huan .ing {
+    background: #fff;
+  }
+  /*时间和进度条*/
+  #jin-box {
+    overflow: hidden;
+    padding: 0 0.15rem;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    position: relative;
+  }
+  #jin-box #current {
+    float: left;
+    color: #fff;
+  }
+  #jin-box #pi-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 2.6rem;
+    background: #F0F0F0;
+    height: 0.02rem;
+    border-radius: 0.1rem;
+  }
+  #jin-box #pi-box #pi {
+    position: absolute;
+    left: -0.04rem;
+    top: -0.03rem;
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 50%;
+    background: #3C7A03;
+  }
+  #jin-box #duration {
+    float: right;
+    color: #fff;
+  }
+  /*播放和切歌*/
+  #qie-box {
+    text-align: center;
+    margin-top: 0.1rem;
+  }
+  #qie-box img {
+    margin-right: 0.1rem;
+  }
+  /*列表*/
+  #lie-box {
+    text-align: center;
+    margin-top: 0.14rem;
+    margin-bottom: 0.14rem;
+  }
+  #lie-box img {
+    width: 0.3rem;
+    margin-right: 0.35rem;
+  }
+  #lie-box img:nth-child(5) {
+    margin-right: 0;
+  }
+  /*隐藏的列表*/
+  .yin {
+    width: 100%;
+    height: 5rem;
+    background: rgba(41, 41, 41, 0.7);
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+  }
+  .yin #yin-top {
+    width: 412px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 44;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    border-bottom: 1px solid #F0F0F0;
+    padding: 0 0.15rem;
+  }
+  .yin #yin-top .span1 {
+    color: #fff;
+    float: left;
+    font-size: 18px;
+  }
+  .yin #yin-top .span1 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .yin #yin-top .span2 {
+    float: right;
+  }
+  .yin #yin-top .span2 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .xian {
+    animation: xian 2s ease both;
+  }
+  @keyframes xian {
+    0% {
+      bottom: -5rem;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  /*歌曲*/
+  #mu-list {
+    margin-top: 0.6rem;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+  }
+  #mu-list li {
+    padding: 0.1rem 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    border-bottom: 1px solid #CBCBCB;
+  }
+  #mu-list li .name {
+    color: #fff;
+    font-size: 18px;
+    float: left;
+  }
+  #mu-list li .author {
+    color: #CBCBCB;
+    float: left;
+    margin-left: 0.1rem;
+  }
+  #mu-list li .love {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .love img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list li .dele {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .dele img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list .active .name, #mu-list .active .author {
+    color: #3C7A03;
+  }
+  /*添加*/
+  #add {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 0.1rem;
+  }
+  /*关闭*/
+  #close {
+    font-size: 16px;
+    padding: 0.2rem 0;
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid #F0F0F0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 412px;
+  }
+}
+
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 41400px*px/320px, 360px, 375px, 412px, 414px;
+  }
+  #zhu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #zhu img {
+    width: 4rem;
+  }
+  #back {
+    width: 100%;
+    font-size: 14px;
+    background-image: url(img/qu.jpg);
+    background-size: 10rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  /*歌曲名*/
+  #header {
+    width: 100%;
+    height: 0.6rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem;
+    position: relative;
+  }
+  #header .back {
+    position: absolute;
+    left: 0.2rem;
+    top: 0;
+  }
+  #header .back img {
+    width: 0.2rem;
+  }
+  #header #name {
+    font-size: 0.25rem;
+  }
+  #header .more {
+    position: absolute;
+    right: 0.2rem;
+    top: 0;
+  }
+  #header .more img {
+    width: 0.2rem;
+  }
+  /*作者*/
+  #author {
+    widows: 100%;
+    height: 0.3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  /*选择*/
+  #select {
+    width: 100%;
+    height: 0.3rem;
+    text-align: center;
+    line-height: 0.3rem;
+  }
+  #select span {
+    border: 1px solid #3C7A03;
+    color: #3C7A03;
+    font-size: 12px;
+    padding: 0.05rem;
+  }
+  #select #dts {
+    border-color: #777;
+    color: #777;
+    font-weight: 600;
+    font-family: "微软雅黑";
+  }
+  /*图片*/
+  #pic {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    margin: 0.2rem auto;
+    overflow: hidden;
+  }
+  /*歌词*/
+  #ci-box {
+    text-align: center;
+  }
+  #ci-box #ci {
+    color: #fff;
+  }
+  /*选项卡*/
+  #huan {
+    text-align: center;
+    margin: 0.1rem auto;
+  }
+  #huan span {
+    display: inline-block;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #A56D53;
+    border-radius: 50%;
+  }
+  #huan .ing {
+    background: #fff;
+  }
+  /*时间和进度条*/
+  #jin-box {
+    overflow: hidden;
+    padding: 0 0.15rem;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    position: relative;
+  }
+  #jin-box #current {
+    float: left;
+    color: #fff;
+  }
+  #jin-box #pi-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 2.6rem;
+    background: #F0F0F0;
+    height: 0.02rem;
+    border-radius: 0.1rem;
+  }
+  #jin-box #pi-box #pi {
+    position: absolute;
+    left: -0.04rem;
+    top: -0.03rem;
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 50%;
+    background: #3C7A03;
+  }
+  #jin-box #duration {
+    float: right;
+    color: #fff;
+  }
+  /*播放和切歌*/
+  #qie-box {
+    text-align: center;
+    margin-top: 0.1rem;
+  }
+  #qie-box img {
+    margin-right: 0.1rem;
+  }
+  /*列表*/
+  #lie-box {
+    text-align: center;
+    margin-top: 0.14rem;
+    margin-bottom: 0.14rem;
+  }
+  #lie-box img {
+    width: 0.3rem;
+    margin-right: 0.35rem;
+  }
+  #lie-box img:nth-child(5) {
+    margin-right: 0;
+  }
+  /*隐藏的列表*/
+  .yin {
+    width: 100%;
+    height: 5rem;
+    background: rgba(41, 41, 41, 0.7);
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+  }
+  .yin #yin-top {
+    width: 414px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 44;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    border-bottom: 1px solid #F0F0F0;
+    padding: 0 0.15rem;
+  }
+  .yin #yin-top .span1 {
+    color: #fff;
+    float: left;
+    font-size: 18px;
+  }
+  .yin #yin-top .span1 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .yin #yin-top .span2 {
+    float: right;
+  }
+  .yin #yin-top .span2 img {
+    width: 0.25rem;
+    vertical-align: middle;
+  }
+  .xian {
+    animation: xian 2s ease both;
+  }
+  @keyframes xian {
+    0% {
+      bottom: -5rem;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  /*歌曲*/
+  #mu-list {
+    margin-top: 0.6rem;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+  }
+  #mu-list li {
+    padding: 0.1rem 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    border-bottom: 1px solid #CBCBCB;
+  }
+  #mu-list li .name {
+    color: #fff;
+    font-size: 18px;
+    float: left;
+  }
+  #mu-list li .author {
+    color: #CBCBCB;
+    float: left;
+    margin-left: 0.1rem;
+  }
+  #mu-list li .love {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .love img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list li .dele {
+    float: right;
+    margin-right: 0.1rem;
+  }
+  #mu-list li .dele img {
+    width: 0.2rem;
+    vertical-align: middle;
+  }
+  #mu-list .active .name, #mu-list .active .author {
+    color: #3C7A03;
+  }
+  /*添加*/
+  #add {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 0.1rem;
+  }
+  /*关闭*/
+  #close {
+    font-size: 16px;
+    padding: 0.2rem 0;
+    color: #fff;
+    text-align: center;
+    border-top: 1px solid #F0F0F0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 414px;
+  }
+}
