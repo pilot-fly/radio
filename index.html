@@ -23,60 +23,62 @@
 		<a href="" id='zhu'>
 			<img src="img/zhu.jpg" />
 		</a>
-		<!-- 详情页 -->
 		<div id="back">
-			<!--歌曲名-->
-			<div id='header'>
-				<span class='back'><img src="img/xiala.png"/></span>
-				<span id="name">卡农</span>
-				<span class="more"><img src="img/msnui-more.png"/></span>
-			</div>
-			<!--作者-->
-			<div id='author'>
-				<span>——</span>
-				<span id="au"></span>
-				<span>——</span>
-			</div>
-			<!--选择-->
-			<div id='select'>
-				<span>标准x</span>
-				<span>独家</span>
-				<span>MV</span>
-				<span id="dts">dts</span>
-			</div>
-			<!--图片-->
-			<div id='pic'><img src="img/qu.jpg"/></div>
-			<!--歌词-->
-			<div id='ci-box'><span id="ci">如果你想忘记我也能失忆</span></div>
-			<!--选项卡-->
-			<div id='huan'>
-				<span></span>
-				<span class="ing"></span>
-				<span></span>
-			</div>
-			<!--进度条-->
-			<div id='jin-box'>
-				<span id="current">0:00</span>
-				<div id='pi-box'>
-					<div id='pi'></div>
+			<!-- 详情页 -->
+			<div id='back-1'>
+				<!--歌曲名-->
+				<div id='header'>
+					<span class='back'><img src="img/xiala.png"/></span>
+					<span id="name">卡农</span>
+					<span class="more"><img src="img/msnui-more.png"/></span>
 				</div>
-				<span id="duration">2:30</span>
+				<!--作者-->
+				<div id='author'>
+					<span>——</span>
+					<span id="au"></span>
+					<span>——</span>
+				</div>
+				<!--选择-->
+				<div id='select'>
+					<span>标准x</span>
+					<span>独家</span>
+					<span>MV</span>
+					<span id="dts">dts</span>
+				</div>
+				<!--图片-->
+				<div id='pic'><img src="img/qu.jpg"/></div>
+				<!--歌词-->
+				<div id='ci-box'><span id="ci">如果你想忘记我也能失忆</span></div>
+				<!--选项卡-->
+				<div id='huan'>
+					<span></span>
+					<span class="ing"></span>
+					<span></span>
+				</div>
+				<!--进度条-->
+				<div id='jin-box'>
+					<span id="current">0:00</span>
+					<div id='pi-box'>
+						<div id='pi'></div>
+					</div>
+					<span id="duration">2:30</span>
+				</div>
+				<!--播放和切歌-->
+				<div id='qie-box'>
+					<img src="img/shangyishou.png" id="pre"/>
+					<span id="play"><img src="img/bofang.png"/></span>
+					<img src="img/xiayishou.png" id="next"/>
+				</div>
+				<!--列表-->
+				<div id='lie-box'>
+					<img src="img/icon4.png" />
+					<img src="img/xunhuan.png" />
+					<img src="img/xiazai.png" />
+					<img src="img/zhuanfa.png" />
+					<img src="img/yinleliebiao.png" id='list'/>
+				</div>
+				<audio src="music/卡农.mp3" id="audio"></audio>
 			</div>
-			<!--播放和切歌-->
-			<div id='qie-box'>
-				<img src="img/shangyishou.png" id="pre"/>
-				<span id="play"><img src="img/bofang.png"/></span>
-				<img src="img/xiayishou.png" id="next"/>
-			</div>
-			<!--列表-->
-			<div id='lie-box'>
-				<img src="img/icon4.png" />
-				<img src="img/xunhuan.png" />
-				<img src="img/xiazai.png" />
-				<img src="img/zhuanfa.png" />
-				<img src="img/yinleliebiao.png" id='list'/>
-			</div>
-			<audio src="music/卡农.mp3" id="audio"></audio>
 			<!--隐藏的列表-->
 			<div class='yin'>
 				<div id='yin-top'>
@@ -94,6 +96,38 @@
 				<div id='add'>+添加歌曲到队列</div>
 				<!--关闭-->
 				<div id='close'>关闭</div>
+			</div>
+			<!-- 列表页 -->
+			<div id='yin'>
+				<div id='di-box'>
+					<div id='di'></div>
+				</div>
+				<div id='mune'>静音</div>
+				<div id='tui'>推荐歌曲</div>
+				<div class='ge-box' data-m='{"name":"萌萌哒","src":"萌萌哒.mp3","author":"童可可 ","pic":"<img src="img/qu.jpg"/>","u":"img/qu.jpg"}'>
+					<div class='ge-name'>萌萌哒</div>
+					<div class='ge-au'>童可可</div>
+				</div>
+				<div class='ge-box' data-m='{"name":"小星星","src":"小星星.mp3","author":"汪苏泷 ","pic":"<img src="img/qu2.jpg"/>","u":"img/qu2.jpg"}'>
+					<div class='ge-name'>小星星</div>
+					<div class='ge-au'>汪苏泷</div>
+				</div>
+				<div class='ge-box' data-m='{"name":"爱你","src":"爱你.mp3","author":"王心凌 ","pic":"<img src="img/qu1.jpg"/>","u":"img/qu1.jpg"}'>
+					<div class='ge-name'>爱你</div>
+					<div class='ge-au'>王心凌</div>
+				</div>
+				<div class='ge-box'>
+					<div class='ge-name'>萌萌哒</div>
+					<div class='ge-au'>童可可</div>
+				</div>
+				<div class='ge-box'>
+					<div class='ge-name'>小星星</div>
+					<div class='ge-au'>汪苏泷</div>
+				</div>
+				<div class='ge-box'>
+					<div class='ge-name'>爱你</div>
+					<div class='ge-au'>王心凌</div>
+				</div>
 			</div>
 		</div>
 	</body>

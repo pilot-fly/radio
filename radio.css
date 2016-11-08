@@ -20,6 +20,7 @@ body {
   html {
     font-size: 32000px*px/320px, 360px, 375px, 412px, 414px;
   }
+  /*首页*/
   #zhu {
     display: block;
     width: 100%;
@@ -29,6 +30,54 @@ body {
   #zhu img {
     width: 4rem;
   }
+  /*列表页*/
+  #yin {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+  }
+  #yin #di-box {
+    width: 3rem;
+    height: 0.02rem;
+    background: #fff;
+    margin: 0.2rem auto;
+    position: relative;
+  }
+  #yin #di-box #di {
+    position: absolute;
+    top: -0.04rem;
+    right: -0.04rem;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #3C7A03;
+    border-radius: 50%;
+  }
+  #yin #mune {
+    margin-left: 0.15rem;
+    color: #3C7A03;
+  }
+  #yin #tui {
+    margin: 0.1rem auto;
+    color: #F27929;
+    font-size: 0.2rem;
+    width: 0.8rem;
+  }
+  #yin .ge-box {
+    width: 1.6rem;
+    height: 1.8rem;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #9B1CE6;
+    margin: 0.1rem 0.13rem;
+  }
+  #yin .ge-box .ge-name, #yin .ge-box .ge-au {
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: #2369B6;
+  }
+  /*详情页*/
   #back {
     width: 100%;
     font-size: 14px;
@@ -122,7 +171,7 @@ body {
   /*选项卡*/
   #huan {
     text-align: center;
-    margin: 0.1rem auto;
+    margin: 0.05rem auto;
   }
   #huan span {
     display: inline-block;
@@ -182,6 +231,7 @@ body {
   /*列表*/
   #lie-box {
     text-align: center;
+    margin-top: 0.1rem;
     margin-bottom: 0.14rem;
   }
   #lie-box img {
@@ -306,6 +356,7 @@ body {
   html {
     font-size: 36000px*px/320px, 360px, 375px, 412px, 414px;
   }
+  /*首页*/
   #zhu {
     display: block;
     width: 100%;
@@ -315,6 +366,54 @@ body {
   #zhu img {
     width: 4rem;
   }
+  /*列表页*/
+  #yin {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+  }
+  #yin #di-box {
+    width: 3rem;
+    height: 0.02rem;
+    background: #fff;
+    margin: 0.2rem auto;
+    position: relative;
+  }
+  #yin #di-box #di {
+    position: absolute;
+    top: -0.04rem;
+    right: -0.04rem;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #3C7A03;
+    border-radius: 50%;
+  }
+  #yin #mune {
+    margin-left: 0.15rem;
+    color: #3C7A03;
+  }
+  #yin #tui {
+    margin: 0.1rem auto;
+    color: #F27929;
+    font-size: 0.2rem;
+    width: 0.8rem;
+  }
+  #yin .ge-box {
+    width: 1.6rem;
+    height: 1.8rem;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #9B1CE6;
+    margin: 0.1rem 0.13rem;
+  }
+  #yin .ge-box .ge-name, #yin .ge-box .ge-au {
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: #2369B6;
+  }
+  /*详情页*/
   #back {
     width: 100%;
     font-size: 14px;
@@ -408,7 +507,7 @@ body {
   /*选项卡*/
   #huan {
     text-align: center;
-    margin: 0.1rem auto;
+    margin: 0.05rem auto;
   }
   #huan span {
     display: inline-block;
@@ -468,6 +567,7 @@ body {
   /*列表*/
   #lie-box {
     text-align: center;
+    margin-top: 0.1rem;
     margin-bottom: 0.14rem;
   }
   #lie-box img {
@@ -592,6 +692,7 @@ body {
   html {
     font-size: 37500px*px/320px, 360px, 375px, 412px, 414px;
   }
+  /*首页*/
   #zhu {
     display: block;
     width: 100%;
@@ -601,6 +702,54 @@ body {
   #zhu img {
     width: 4rem;
   }
+  /*列表页*/
+  #yin {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+  }
+  #yin #di-box {
+    width: 3rem;
+    height: 0.02rem;
+    background: #fff;
+    margin: 0.2rem auto;
+    position: relative;
+  }
+  #yin #di-box #di {
+    position: absolute;
+    top: -0.04rem;
+    right: -0.04rem;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #3C7A03;
+    border-radius: 50%;
+  }
+  #yin #mune {
+    margin-left: 0.15rem;
+    color: #3C7A03;
+  }
+  #yin #tui {
+    margin: 0.1rem auto;
+    color: #F27929;
+    font-size: 0.2rem;
+    width: 0.8rem;
+  }
+  #yin .ge-box {
+    width: 1.6rem;
+    height: 1.8rem;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #9B1CE6;
+    margin: 0.1rem 0.13rem;
+  }
+  #yin .ge-box .ge-name, #yin .ge-box .ge-au {
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: #2369B6;
+  }
+  /*详情页*/
   #back {
     width: 100%;
     font-size: 14px;
@@ -694,7 +843,7 @@ body {
   /*选项卡*/
   #huan {
     text-align: center;
-    margin: 0.1rem auto;
+    margin: 0.05rem auto;
   }
   #huan span {
     display: inline-block;
@@ -754,6 +903,7 @@ body {
   /*列表*/
   #lie-box {
     text-align: center;
+    margin-top: 0.1rem;
     margin-bottom: 0.14rem;
   }
   #lie-box img {
@@ -878,6 +1028,7 @@ body {
   html {
     font-size: 41200px*px/320px, 360px, 375px, 412px, 414px;
   }
+  /*首页*/
   #zhu {
     display: block;
     width: 100%;
@@ -887,6 +1038,54 @@ body {
   #zhu img {
     width: 4rem;
   }
+  /*列表页*/
+  #yin {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+  }
+  #yin #di-box {
+    width: 3rem;
+    height: 0.02rem;
+    background: #fff;
+    margin: 0.2rem auto;
+    position: relative;
+  }
+  #yin #di-box #di {
+    position: absolute;
+    top: -0.04rem;
+    right: -0.04rem;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #3C7A03;
+    border-radius: 50%;
+  }
+  #yin #mune {
+    margin-left: 0.15rem;
+    color: #3C7A03;
+  }
+  #yin #tui {
+    margin: 0.1rem auto;
+    color: #F27929;
+    font-size: 0.2rem;
+    width: 0.8rem;
+  }
+  #yin .ge-box {
+    width: 1.6rem;
+    height: 1.8rem;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #9B1CE6;
+    margin: 0.1rem 0.13rem;
+  }
+  #yin .ge-box .ge-name, #yin .ge-box .ge-au {
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: #2369B6;
+  }
+  /*详情页*/
   #back {
     width: 100%;
     font-size: 14px;
@@ -980,7 +1179,7 @@ body {
   /*选项卡*/
   #huan {
     text-align: center;
-    margin: 0.1rem auto;
+    margin: 0.05rem auto;
   }
   #huan span {
     display: inline-block;
@@ -1040,6 +1239,7 @@ body {
   /*列表*/
   #lie-box {
     text-align: center;
+    margin-top: 0.1rem;
     margin-bottom: 0.14rem;
   }
   #lie-box img {
@@ -1164,6 +1364,7 @@ body {
   html {
     font-size: 41400px*px/320px, 360px, 375px, 412px, 414px;
   }
+  /*首页*/
   #zhu {
     display: block;
     width: 100%;
@@ -1173,6 +1374,54 @@ body {
   #zhu img {
     width: 4rem;
   }
+  /*列表页*/
+  #yin {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+  }
+  #yin #di-box {
+    width: 3rem;
+    height: 0.02rem;
+    background: #fff;
+    margin: 0.2rem auto;
+    position: relative;
+  }
+  #yin #di-box #di {
+    position: absolute;
+    top: -0.04rem;
+    right: -0.04rem;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #3C7A03;
+    border-radius: 50%;
+  }
+  #yin #mune {
+    margin-left: 0.15rem;
+    color: #3C7A03;
+  }
+  #yin #tui {
+    margin: 0.1rem auto;
+    color: #F27929;
+    font-size: 0.2rem;
+    width: 0.8rem;
+  }
+  #yin .ge-box {
+    width: 1.6rem;
+    height: 1.8rem;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #9B1CE6;
+    margin: 0.1rem 0.13rem;
+  }
+  #yin .ge-box .ge-name, #yin .ge-box .ge-au {
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: #2369B6;
+  }
+  /*详情页*/
   #back {
     width: 100%;
     font-size: 14px;
@@ -1266,7 +1515,7 @@ body {
   /*选项卡*/
   #huan {
     text-align: center;
-    margin: 0.1rem auto;
+    margin: 0.05rem auto;
   }
   #huan span {
     display: inline-block;
@@ -1326,6 +1575,7 @@ body {
   /*列表*/
   #lie-box {
     text-align: center;
+    margin-top: 0.1rem;
     margin-bottom: 0.14rem;
   }
   #lie-box img {

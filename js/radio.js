@@ -8,6 +8,21 @@ $(function(){
 		$("#zhu").css("display","block");
 		$("#back").css("display","none");
 	});
+	//列表页
+	$("#back-1").on("touchmove",function(){
+		$(this).css("display","none");
+		$("#yin").css("display","block");
+	});
+	$("#yin").on("touchmove",function(){
+		$(this).css("display","none");
+		$("#back-1").css("display","block");
+	});
+	$("#add").on("touchend",function(){
+		$(".yin").removeClass('xian').css("display","none");
+		$("#back-1").css("display","none");
+		$("#yin").css("display","block");
+	});
+	//详情页
 	var $audio=$("#audio");
 	var audio=$audio.get(0);
 	//列表和切换歌曲
@@ -25,6 +40,13 @@ $(function(){
 		});
 	}
 	render();
+	//添加歌曲
+	$(".ge-box").on('touchend',function(){
+		console.log(1)
+		var d=$(this).attr('data-m');
+		musics.push(JSON.parse(d));
+		render();
+	});
 	//列表的删除
 	$("#mu-list").on('touchend','.dele',function(){
 		var li=$(this).closest('li');
@@ -100,12 +122,14 @@ $(function(){
 			s=(s<10)?"0"+s:s;
 			return m+":"+s;
 		}
+		//调进度
 		pi_box.on('touchend',function(e){
 			console.log(1);
 			var offsetX=e.originalEvent.changedTouches[0].clientX;
 			audio.currentTime=offsetX/$(this).width()*audio.duration;
 		});
 		pi.on('touchend',false);//阻止冒泡
+		//进度条的拖拽
 		pi.on('touchstart',function(e){
 //			var r=pi.width()/2;
 //			var offsetX=e.originalEvent.changedTouches[0].clientX;
@@ -126,9 +150,55 @@ $(function(){
 		$(document).on('touchend',function(){
 			$(document).off('touchmove');
 		});
+		//调节音量
+		var di_box=$('#di-box');
+		var di=$('#di');
+		di_box.on('touchend',function(e){
+			var offsetX=e.originalEvent.changedTouches[0].clientX;
+			audio.volume=offsetX/$(this).width();
+			// var left=e.offsetX-di.width()/2
+			di.css("left",""+offsetX+"px");
+			mune.attr('data-v');
+		});
+		di.on('touchend',false);//阻止冒泡
+		var mune=$('#mune');
+		mune.on('touchend',function(){
+			if($(this).attr('data-v')){
+				audio.volume=$(this).attr('data-v');
+				$(this).removeAttr('data-v');
+			}else{
+				$(this).attr('data-v',audio.volume);
+				audio.volume=0;
+				di.css("left","0px");
+			}
+		});
+		// audio.onvolumechange =function(){
+		// 	var left=audio.volume*di_box.width()-di.width()/2;
+		// 	di.css("left",""+left+"px");
+			
+		// }
+		//音量条拖拽
+		di.on("touchstart",function(e){
+			// var r=di.width()/2;
+			// var start=r-e.offsetX;
+			$(document).on("touchmove",function(e){
+				var m=e.originalEvent.changedTouches[0].clientX;;
+				var l=m-pi_box.offset().left;
+				var yin=l/di_box.width();
+				if(yin>=1||yin<=0){
+					return;
+				}
+				audio.volume=yin;
+			});
+			return false;
+		});
+		$(document).on("touchend",function(){
+			$(document).off('touchmove');
+		});
 	//////////////////////////////////////////////////////////所有事件
 	$audio.on('volumechange',function(){
-		
+		var left=audio.volume*di_box.width()-di.width()/2;
+		di.css("left",""+left+"px");
 	});
 	$audio.on('loadstart',function(){
 		$("#name").html(musics[currentIndex].name);
