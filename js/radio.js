@@ -1,4 +1,13 @@
 $(function(){
+	//跳转详情页
+	$("#zhu").on("touchend",function(){
+		$(this).css("display","none");
+		$("#back").css("display","block");
+	});
+	$(".back").on("touchend",function(){
+		$("#zhu").css("display","block");
+		$("#back").css("display","none");
+	});
 	var $audio=$("#audio");
 	var audio=$audio.get(0);
 	//列表和切换歌曲
@@ -58,10 +67,10 @@ $(function(){
 	$("#pre").on('touchend',pre);
 	//列表页
 	$('#list').on('touchend',function(){
-		$('.yin').addClass('xian');
+		$('.yin').css("display","block").addClass('xian');
 	});
 	$('#close').on('touchend',function(){
-		$('.yin').removeClass('xian');
+		$('.yin').removeClass('xian').css("display","none");
 	});
 	//点击切换
 	$("#mu-list").on("touchend","li",function(){
@@ -131,14 +140,16 @@ $(function(){
 		
 	});
 	$audio.on('canplay',function(){
-		audio.play();
+		// audio.play();
 		duration.html(huan(audio.duration));
 	});
 	$audio.on('play',function(){
 		play.html('<img src="img/pause-outline.png" id="play"/>');
+		$("#pic").addClass("zhuan");
 	});
 	$audio.on('pause',function(){
 		play.html('<img src="img/bofang.png" id="play"/>');
+		$("#pic").removeClass("zhuan");
 	});
 	$audio.on('ended',next);
 

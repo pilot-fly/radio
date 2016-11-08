@@ -43,6 +43,7 @@ body{
            background-size:10rem;
            background-repeat: no-repeat;
            overflow: hidden; 
+           display: none;
         }
         /*歌曲名*/
         #header{
@@ -109,6 +110,17 @@ body{
            margin: 0.2rem auto;
            overflow: hidden;
        }
+       .zhuan{
+           animation: zhuan 3600s linear both;
+       }
+       @keyframes zhuan{
+           0%{
+               transform:rotateZ(0deg);
+           }
+           100%{
+               transform:rotateZ(7200deg);
+           }
+       }
        /*歌词*/
       #ci-box{
           text-align:center;
@@ -174,7 +186,7 @@ body{
    /*列表*/
     #lie-box{
         text-align: center;
-        margin-top:0.14rem;
+//      margin-top:0.14rem;
         margin-bottom:0.14rem;
         img{
             width: 0.3rem;
@@ -192,6 +204,7 @@ body{
         position: absolute;
         bottom:-5rem;
         left: 0;
+        display: none;
 //      position: relative;
         #yin-top{
             width: $w;
