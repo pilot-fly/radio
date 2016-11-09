@@ -9,10 +9,10 @@ $(function(){
 		$("#back").css("display","none");
 	});
 	//列表页
-	$("#back-1").on("touchmove",function(){
-		$(this).css("display","none");
-		$("#yin").css("display","block");
-	});
+	// $("#back-1").on("touchmove",function(){
+	// 	$(this).css("display","none");
+	// 	$("#yin").css("display","block");
+	// });
 	$("#yin").on("touchmove",function(){
 		$(this).css("display","none");
 		$("#back-1").css("display","block");
@@ -131,18 +131,13 @@ $(function(){
 		pi.on('touchend',false);//阻止冒泡
 		//进度条的拖拽
 		pi.on('touchstart',function(e){
-//			var r=pi.width()/2;
-//			var offsetX=e.originalEvent.changedTouches[0].clientX;
-//			var start=r-offsetX;
 			$(document).on('touchmove',function(e){
-//				console.log(4)
 				var m=e.originalEvent.changedTouches[0].clientX;;
 				var l=m-pi_box.offset().left;
 				var yin=m/$(this).width()*audio.duration;
 				if(yin>audio.duration||yin<0){
 					return;
 				}
-				console.log(l);
 				audio.currentTime=yin;
 			});
 			return false;
@@ -156,7 +151,6 @@ $(function(){
 		di_box.on('touchend',function(e){
 			var offsetX=e.originalEvent.changedTouches[0].clientX;
 			audio.volume=offsetX/$(this).width();
-			// var left=e.offsetX-di.width()/2
 			di.css("left",""+offsetX+"px");
 			mune.attr('data-v');
 		});
@@ -172,15 +166,8 @@ $(function(){
 				di.css("left","0px");
 			}
 		});
-		// audio.onvolumechange =function(){
-		// 	var left=audio.volume*di_box.width()-di.width()/2;
-		// 	di.css("left",""+left+"px");
-			
-		// }
 		//音量条拖拽
 		di.on("touchstart",function(e){
-			// var r=di.width()/2;
-			// var start=r-e.offsetX;
 			$(document).on("touchmove",function(e){
 				var m=e.originalEvent.changedTouches[0].clientX;;
 				var l=m-pi_box.offset().left;
@@ -203,7 +190,7 @@ $(function(){
 	$audio.on('loadstart',function(){
 		$("#name").html(musics[currentIndex].name);
 		$("#au").html(musics[currentIndex].author);
-		$('#pic').html(musics[currentIndex].pic);
+		$('#pic').html('<img src="'+musics[currentIndex].u+'"/>');
 		$('#back').css('background-image','url('+musics[currentIndex].u+')');
 	});
 	$audio.on('progress',function(){
